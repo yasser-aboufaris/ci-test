@@ -1,0 +1,17 @@
+name: c++
+  
+on:
+  push:
+    branches:[main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v3
+    - name: install g++
+      run: sudo apt update && sudo apt install gcc 
+    - name: compile 
+      run: g++ src/main.cpp -o main
+    - name: run
+      run: ./main
