@@ -1,0 +1,18 @@
+name:test
+
+on:
+  push:
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+  steps:
+    uses: actions/checkout@v3
+    - name: install compiler
+      run: sudo apt update && sudo apt install g++
+    - name: compile
+      run: g++ ./src/main.cpp -o main
+    - name: run
+      run: ./main
+
+

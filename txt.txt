@@ -1,0 +1,10 @@
+name: c++
+on:
+  push:
+    branch: [master]
+
+jobs:
+  build:
+    runs-on:ubuntu-latest
+    steps:
+      - uses: actions/checkout 
